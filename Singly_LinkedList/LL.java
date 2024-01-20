@@ -32,11 +32,29 @@ public class LL {
         size += 1;
     }
 
+    public void insert(int value,int position){
+        if(position == 0){
+            insertFirst(value);
+        }
+        else if(position == size){
+            insertLast(value);
+        }
+
+        Node temp = head;
+
+        for(int i=1;i<position;i++){
+            temp = temp.next;
+        }
+
+        Node node = new Node(value,temp.next);
+        temp.next = node;
+    }
+
     public void display(){
         Node temp = head;
 
         while(temp != null){
-            System.out.println(temp.value+" -> ");
+            System.out.print(temp.value+" -> ");
             temp = temp.next;
         }
         System.out.println("END");

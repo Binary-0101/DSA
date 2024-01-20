@@ -22,6 +22,16 @@ public class LL {
         size += 1;
     }
 
+    public void insertLast(int value){
+        if(tail == null){
+            insertFirst(value);
+        }
+        Node node = new Node(value);
+        tail.next = node;
+        tail = node;
+        size += 1;
+    }
+
     public void display(){
         Node temp = head;
 

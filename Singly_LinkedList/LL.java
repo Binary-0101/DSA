@@ -50,6 +50,17 @@ public class LL {
         temp.next = node;
     }
 
+    public int deleteFirst(){
+        int value = head.value;
+
+        if(head == null){
+            tail = null;
+        }
+
+        size--;
+        return value;
+    }
+
     public void display(){
         Node temp = head;
 

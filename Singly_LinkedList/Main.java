@@ -15,6 +15,8 @@ public class Main {
 
         list.insert(200, 4);
 
+        System.out.println(list.deleteFirst());
+
         list.display();
     }
 }

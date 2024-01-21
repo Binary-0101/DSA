@@ -14,6 +14,24 @@ public class DLL {
         head = node;
     }
 
+    public void insertLast(int val){
+        Node node = new Node(val);
+        if(head == null){
+            node.prev = null;
+            head = node;
+            return;
+        }
+
+        Node last = head;
+        while(last.next != null){
+            last = last.next;
+        }
+
+        last.next = node;
+        node.prev = last;
+        node.next = null;
+    }
+
     public void display(){
         Node temp = head;
         Node last = null;

@@ -32,6 +32,32 @@ public class DLL {
         node.next = null;
     }
 
+    public void insert(int after,int value){
+        Node temp = find(after);
+
+        if(temp == null){
+            System.out.println("Node does not exists");
+        }
+
+        Node node = new Node(value,temp.next,temp);
+        temp.next = node;
+        
+        if(node.next != null)
+        node.next.prev = node;
+    }
+
+    public Node find(int after){
+        Node temp = head;
+
+        while(temp != null){
+            if(temp.val == after){
+                return temp;
+            }
+            temp = temp.next;
+        }
+        return null;
+    }
+
     public void display(){
         Node temp = head;
         Node last = null;
